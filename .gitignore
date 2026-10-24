@@ -1,0 +1,5 @@
+# Add language-specific entries as your project takes shape.
+.DS_Store
+.env
+.env.*
+!.env.example
