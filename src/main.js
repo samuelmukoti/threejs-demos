@@ -14,6 +14,7 @@ import { createRain } from './effects/rain.js';
 import { createCameraRig } from './camera/cameraRig.js';
 import { createCinematicCamera, CAMERA_MODES } from './camera/cinematicCamera.js';
 import { createDebugPanel } from './ui/debugPanel.js';
+import { hashValues } from './utils/stateHash.js';
 
 const DEFAULT_SEED = 1337;
 const MAX_FRAME_DT = 0.1; // wall-clock clamp so a stalled tab never fast-forwards the sim
@@ -62,20 +63,7 @@ export function hasWebGL(doc = globalThis.document) {
   }
 }
 
-// Stable FNV-1a hash over a flat list of numbers/strings (numbers rounded to 1e-4).
-export function hashValues(values) {
-  let h = 0x811c9dc5;
-  const mixInt = (n) => { h = Math.imul(h ^ (n | 0), 0x01000193) >>> 0; };
-  for (const v of values) {
-    if (typeof v === 'string') {
-      for (let i = 0; i < v.length; i++) mixInt(v.charCodeAt(i));
-      mixInt(0x7f);
-    } else {
-      mixInt(Math.round((Number.isFinite(v) ? v : 0) * 1e4));
-    }
-  }
-  return h.toString(16).padStart(8, '0');
-}
+export { hashValues };
 
 function showNoWebGL(doc, reason) {
   const el = doc.getElementById('no-webgl');

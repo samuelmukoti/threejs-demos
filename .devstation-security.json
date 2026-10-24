@@ -143,13 +143,31 @@
     "zip",
     "zsh"
   ],
-  "stack_commands": [],
-  "script_commands": [],
+  "stack_commands": [
+    "node",
+    "npm",
+    "npx",
+    "vite",
+    "vitest"
+  ],
+  "script_commands": [
+    "bun",
+    "npm",
+    "pnpm",
+    "yarn"
+  ],
   "custom_commands": [],
   "detected_stack": {
-    "languages": [],
-    "package_managers": [],
-    "frameworks": [],
+    "languages": [
+      "javascript"
+    ],
+    "package_managers": [
+      "npm"
+    ],
+    "frameworks": [
+      "vite",
+      "vitest"
+    ],
     "databases": [],
     "infrastructure": [],
     "cloud_providers": [],
@@ -157,13 +175,20 @@
     "version_managers": []
   },
   "custom_scripts": {
-    "npm_scripts": [],
+    "npm_scripts": [
+      "dev",
+      "build",
+      "preview",
+      "test",
+      "setup",
+      "postinstall"
+    ],
     "make_targets": [],
     "poetry_scripts": [],
     "cargo_aliases": [],
     "shell_scripts": []
   },
   "project_dir": "/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095",
-  "created_at": "2026-10-24T06:20:17.637814",
-  "project_hash": "556d7dfd04927ea5229c2a83c449c24c"
+  "created_at": "2026-10-24T06:52:49.291597",
+  "project_hash": "8dec06a37cdff7b437b3ef3158c0cd85"
 }
