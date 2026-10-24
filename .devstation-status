@@ -1,0 +1,25 @@
+{
+  "active": true,
+  "spec": "task-8dd1f095",
+  "state": "building",
+  "subtasks": {
+    "completed": 4,
+    "total": 26,
+    "in_progress": 1,
+    "failed": 0
+  },
+  "phase": {
+    "current": "Pure deterministic core modules",
+    "id": null,
+    "total": 4
+  },
+  "workers": {
+    "active": 0,
+    "max": 1
+  },
+  "session": {
+    "number": 5,
+    "started_at": "2026-10-24T06:20:13.365745"
+  },
+  "last_update": "2026-10-24T06:23:37.342441"
+}

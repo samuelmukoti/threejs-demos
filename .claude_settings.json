@@ -1,0 +1,36 @@
+{
+  "sandbox": {
+    "enabled": false,
+    "autoAllowBashIfSandboxed": true
+  },
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Read(./**)",
+      "Write(./**)",
+      "Edit(./**)",
+      "Glob(./**)",
+      "Grep(./**)",
+      "Read(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/**)",
+      "Write(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/**)",
+      "Edit(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/**)",
+      "Glob(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/**)",
+      "Grep(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/**)",
+      "Read(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/.devstation/specs/task-8dd1f095/**)",
+      "Write(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/.devstation/specs/task-8dd1f095/**)",
+      "Edit(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/.devstation/specs/task-8dd1f095/**)",
+      "Glob(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/.devstation/specs/task-8dd1f095/**)",
+      "Grep(/workspaces/wild-shore/projects/three-demos/.devstation/worktrees/tasks/task-8dd1f095/.devstation/specs/task-8dd1f095/**)",
+      "Read(/workspaces/wild-shore/projects/three-demos/.devstation/**)",
+      "Write(/workspaces/wild-shore/projects/three-demos/.devstation/**)",
+      "Edit(/workspaces/wild-shore/projects/three-demos/.devstation/**)",
+      "Glob(/workspaces/wild-shore/projects/three-demos/.devstation/**)",
+      "Grep(/workspaces/wild-shore/projects/three-demos/.devstation/**)",
+      "Bash(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "mcp__context7__resolve-library-id(*)",
+      "mcp__context7__query-docs(*)"
+    ]
+  }
+}
