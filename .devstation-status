@@ -1,0 +1,25 @@
+{
+  "active": true,
+  "spec": "task-8dd1f095",
+  "state": "building",
+  "subtasks": {
+    "completed": 23,
+    "total": 26,
+    "in_progress": 1,
+    "failed": 0
+  },
+  "phase": {
+    "current": "Debug UI, bootstrap, tests and docs",
+    "id": null,
+    "total": 5
+  },
+  "workers": {
+    "active": 0,
+    "max": 1
+  },
+  "session": {
+    "number": 24,
+    "started_at": "2026-10-24T06:20:13.365745"
+  },
+  "last_update": "2026-10-24T06:55:04.605311"
+}

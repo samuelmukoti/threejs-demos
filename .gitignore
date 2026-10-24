@@ -3,3 +3,14 @@
 .env
 .env.*
 !.env.example
+
+# DevStation data directory
+.devstation/
+
+# Node / build output
+node_modules
+dist
+
+# Copied decoder assets (see scripts/copy-decoders.js)
+public/draco
+public/basis

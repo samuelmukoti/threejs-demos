@@ -1,0 +1,24 @@
+{
+  "name": "three-demos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "setup": "node scripts/copy-decoders.js",
+    "postinstall": "node scripts/copy-decoders.js"
+  },
+  "dependencies": {
+    "three": "0.186.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.7",
+    "vitest": "^5.0.5"
+  }
+}
