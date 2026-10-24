@@ -8,6 +8,7 @@ import { settings as defaultSettings } from '../settings.js';
 import { mulberry32, range, pick } from '../utils/prng.js';
 import { createMaterials } from './materials.js';
 import { createSpline } from '../animation/splineMotion.js';
+import { createSetPieces } from './setPieces.js';
 
 // Explicit draw order buckets.
 export const RENDER_ORDER = { opaque: 0, glass: 10, cones: 20, particles: 30, lensDroplets: 40 };
@@ -398,10 +399,14 @@ export function createScene({ seed = 1337, settings = defaultSettings } = {}) {
     neonSigns.push(sign);
   }
 
+  // ---- Set pieces: tunnel, intersection, truck, side street, traffic ---
+  const setPieces = createSetPieces({ root, settings, seed, materials, renderOrder: RENDER_ORDER, roadHalf: ROAD_HALF });
+
   // ---- Per-frame update -------------------------------------------------
   const camLike = { position: null };
   function update(t = 0, dt = 0) {
     const c = camLike.position || lodCenter;
+    setPieces.update(t, c);
     if (c.distanceToSquared(lastCenter) > 25) { lastCenter.copy(c); refreshLod(c); }
     // Signal cycle: 6s green, 1.5s amber, 6s red.
     const phase = t % 13.5;
@@ -426,6 +431,7 @@ export function createScene({ seed = 1337, settings = defaultSettings } = {}) {
     for (const m of ownMaterials) m.dispose();
     materials.dispose();
     for (const set of lodSets) { set.near.dispose(); set.far?.dispose(); }
+    setPieces.dispose();
     geometries.length = 0;
     ownMaterials.length = 0;
     root.removeFromParent();
@@ -435,6 +441,9 @@ export function createScene({ seed = 1337, settings = defaultSettings } = {}) {
     root, spline, materials, road, sidewalks, markings, lodSets, lodProps, parkedCars, cones,
     neonSigns, streetlightPositions: lightPositions, renderOrder: RENDER_ORDER,
     setLodCamera, refreshLod, geometries, ownMaterials,
+    setPieces: setPieces.handles,
+    steamVents: setPieces.handles.steamVents,
+    nearMissBarriers: setPieces.handles.nearMissBarriers,
   };
   return { scene, update, dispose, handles };
 }
